@@ -69,6 +69,10 @@ public class User extends Timestamped {
         this.userStatus = UserStatusEnum.USER_NORMAL;
     }
 
+    public User(String testuser, String password) {
+        super();
+    }
+
     public void update(ProfileRequestDto requestDto) {
         this.name = requestDto.getName();
         this.lineIntro = requestDto.getLineIntro();
@@ -81,5 +85,9 @@ public class User extends Timestamped {
 
     public void resignStatus() {
         this.userStatus = UserStatusEnum.USER_RESIGN;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }
