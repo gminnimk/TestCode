@@ -4,10 +4,13 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Getter
+@Setter
 @NoArgsConstructor
 public class ProfileRequestDto {
+
     @NotBlank(message = "이름은 공백일 수 없습니다.")
     private String name;
 
@@ -21,5 +24,13 @@ public class ProfileRequestDto {
 
     public void setChangedPassword(String changedPassword) {
         this.changedPassword = changedPassword;
+    }
+
+    public void setName(String updatedName) {
+        this.name = updatedName;
+    }
+
+    public void setLineIntro(String updatedIntro) {
+        this.lineIntro = updatedIntro;
     }
 }
