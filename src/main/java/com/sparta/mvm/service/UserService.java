@@ -57,4 +57,12 @@ public class UserService {
 
         userRep.resignStatus();
     }
+
+
+    @Transactional(readOnly = true)
+    public User findById(Long id) {
+        // userRepository.findById 메서드를 호출하여 사용자 조회
+        Optional<User> userOptional = userRepository.findById(id);
+        return userOptional.orElse(null); // Optional에서 사용자 객체를 가져오거나, 없으면 null 반환
+    }
 }
